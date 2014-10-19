@@ -15,7 +15,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
     #region PRIVATE_MEMBER_VARIABLES
 	public static bool TRACKING = false;
 	public static string aktName = "";
- 
     private TrackableBehaviour mTrackableBehaviour;
     
     #endregion // PRIVATE_MEMBER_VARIABLES
@@ -67,7 +66,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 
     #region PRIVATE_METHODS
 
-
     private void OnTrackingFound()
     {
         Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
@@ -77,42 +75,43 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 		// render all except Ignore:
         foreach (Renderer component in rendererComponents)
         {
-			if(component.tag != "Ignore")component.enabled = true;
-            
-        }
-
-        // Enable colliders:
+			component.enabled = true;
+		}
+		
+		// Enable colliders:
 		// render all except Ignore:
 		foreach (Collider component in colliderComponents)
         {
-			if(component.tag != "Ignore")component.enabled = true;
-        }
+			component.enabled = true;
+		}
+
 		aktName = this.name;
 
-
+		if (mTrackableBehaviour.TrackableName == "mijn4") {
+						GameObject.Find ("screenFader").GetComponent<FadeScript> ().fade = true;
+				} else if (mTrackableBehaviour.TrackableName == "mijn5") {
+						GameObject.Find ("Cube").GetComponent<FadeObjectInOut> ().FadeOut (5.0f);	
+				} //else if (mTrackableBehaviour.TrackableName == "mijn8") {GameObject.Find("ARCamera").GetComponent<DataSetLoadBehaviour>()}
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
     }
 
-
     private void OnTrackingLost()
     {
-        Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
-        Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
+				Renderer[] rendererComponents = GetComponentsInChildren<Renderer> (true);
+				Collider[] colliderComponents = GetComponentsInChildren<Collider> (true);
 
-        // Disable rendering:
-        foreach (Renderer component in rendererComponents)
-        {
-            component.enabled = false;
-        }
+				// Disable rendering:
+				foreach (Renderer component in rendererComponents) {
+						component.enabled = false;
+				}
 
-        // Disable colliders:
-        foreach (Collider component in colliderComponents)
-        {
-            component.enabled = false;
-        }
+				// Disable colliders:
+				foreach (Collider component in colliderComponents) {
+						component.enabled = false;
+				}
 
-        Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
-    }
+				Debug.Log ("Trackable " + mTrackableBehaviour.TrackableName + " lost");
+		}
 
     #endregion // PRIVATE_METHODS
 }

@@ -118,7 +118,7 @@ public class VideoPlaybackAppManager : AppManager {
     private void UpdateFlashSettingsInUIView()
     {
         VideoPlaybackUIEventHandler handler = GameObject.FindObjectOfType(typeof(VideoPlaybackUIEventHandler)) as VideoPlaybackUIEventHandler;
-        handler.View.mCameraFlashSettings.Enable(false);
+        handler.View.mCameraFlashSettings.Enable(true);
     }
 
 

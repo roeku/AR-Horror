@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{5CF57F73-FCA6-9D40-7E9A-370532AB8530}</ProjectGuid>
+	<ProjectGuid>{CC77C4CB-1D15-4930-AC3F-E85B16FFB3D5}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Dive\OpenDiveSensor.cs" />
+     <Compile Include="Assets\FadeObjectInOut.cs" />
+     <Compile Include="Assets\FadeScript.cs" />
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\CloudRecoBehaviour.cs" />
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\CylinderTargetBehaviour.cs" />
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\DataSetLoadBehaviour.cs" />
@@ -104,6 +106,7 @@
      <Compile Include="Assets\Scripts\VideoPlaybackUIView.cs" />
      <Compile Include="Assets\Scripts\VideoTextureBehaviour.cs" />
      <Compile Include="Assets\TargetPositioning.cs" />
+     <Compile Include="Assets\TurnAndroidOff.cs" />
      <Compile Include="Assets\Vuforia Video Playback\Scripts\VideoPlaybackBehaviour.cs" />
      <Compile Include="Assets\Vuforia Video Playback\Scripts\VideoPlayerHelper.cs" />
      <None Include="Assets\Shaders\Default.shader" />
@@ -124,7 +127,7 @@
      <None Include="Assets\Resources\Vuforia_About.txt" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\Text3D.shader" />
  <Reference Include="Qualcomm.Vuforia.UnityExtensions">
- <HintPath>C:/Users/Roeku/Documents/school/ViewR-simple-master/Assets/Qualcomm Augmented Reality/Scripts/Internal/Qualcomm.Vuforia.UnityExtensions.dll</HintPath>
+ <HintPath>C:/Users/Roeku/Documents/school/ViewR-simple-master/AR-Horror/Assets/Qualcomm Augmented Reality/Scripts/Internal/Qualcomm.Vuforia.UnityExtensions.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

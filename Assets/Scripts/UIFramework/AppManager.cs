@@ -41,7 +41,8 @@ public class AppManager : MonoBehaviour
 		private static AppManager instance;
     
 		//This gets called from SceneManager's Start() 
-		public virtual void InitManager ()
+		
+		 public virtual void InitManager ()
 		{
 				instance = this;
 				mSplashView = new SplashScreenView ();
@@ -60,7 +61,7 @@ public class AppManager : MonoBehaviour
 				mActiveViewType = ViewType.SPLASHVIEW;
 				m_UIEventHandler.Bind ();
 		}
-    
+		
 		public static AppManager getInstance ()
 		{
 				return instance;
@@ -79,15 +80,15 @@ public class AppManager : MonoBehaviour
 				case ViewType.SNDSPLASHVIEW:
 						mSecondSplashView.UpdateUI(true);
 						break;
-				
+
 				case ViewType.SPLASHVIEW:
 						mSplashView.UpdateUI (true);
 						break;
-            
+
 				case ViewType.ABOUTVIEW:
 						mAboutView.UpdateUI (true);
 						break;
-            
+
 				case ViewType.UIVIEW:
 						m_UIEventHandler.UpdateView (true);
 						break;
@@ -174,4 +175,5 @@ public class AppManager : MonoBehaviour
 		}
     #endregion PRIVATE_METHODS
     
+
 }
