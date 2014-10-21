@@ -5,7 +5,7 @@ public class FadeScript : MonoBehaviour {
 	public bool fade;
 	public bool fadeBlack;
 	private bool fadeDone;
-	public float fadeSpeed = 1.5f;
+	public float fadeSpeed = 5.5f;
 
 	// Use this for initialization
 	void Start () 
@@ -22,14 +22,16 @@ public class FadeScript : MonoBehaviour {
 		if(fadeBlack)
 		{
 			guiTexture.color = Color.Lerp(guiTexture.color, Color.black, fadeSpeed * Time.deltaTime);
+			CameraDevice.Instance.SetFlashTorchMode(false);
 			fade= false;
 		}
 		else
 		{
 			guiTexture.color = Color.Lerp(guiTexture.color, Color.clear, fadeSpeed * Time.deltaTime);
+			//CameraDevice.Instance.SetFlashTorchMode(true);
 		}
 
-		if(guiTexture.color.a >= 0.95f)fadeBlack = false;
-
+		if(guiTexture.color.a >= 0.95f)fadeBlack = false;	
 	}
+
 }

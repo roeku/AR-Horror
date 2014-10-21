@@ -87,15 +87,26 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 
 		aktName = this.name;
 
-		if (mTrackableBehaviour.TrackableName == "mijn1") {
-			Invoke("fadeToBlackToFire", 2.0f);
-		} else if (mTrackableBehaviour.TrackableName == "mijn5") {
-			//Invoke("GameObject.Find ('Cube').GetComponent<FadeObjectInOut>().FadeOut (5.0f)", 2.0f);
-			CameraDevice.Instance.SetFlashTorchMode(true);
-		} //else if (mTrackableBehaviour.TrackableName == "mijn8") {GameObject.Find("ARCamera").GetComponent<DataSetLoadBehaviour>()}
-        	Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
+		if (mTrackableBehaviour.TrackableName == "FamilyPortrait") {
+						Invoke ("fadeToBlackToFire", 15.0f);
+						CameraDevice.Instance.SetFlashTorchMode (true);
 
+				} else if (mTrackableBehaviour.TrackableName == "target1") {
+						CameraDevice.Instance.SetFlashTorchMode (true);
 
+				} else if (mTrackableBehaviour.TrackableName == "Jim") {
+						Invoke ("activateNoise", 5.0f);
+				} else if (mTrackableBehaviour.TrackableName == "Jorien") {
+						Invoke ("activateNoise", 5.0f);		
+				} else if (mTrackableBehaviour.TrackableName == "Wout") {
+						Invoke ("activateNoise", 5.0f);		
+				} else if (mTrackableBehaviour.TrackableName == "PortraitCharles") {
+						GameObject.Find("screenFader").GetComponent<flikkerScript>().enabled = true;
+			Debug.Log("XDDDDD");
+				}
+			//GameObject.Find('schim').GetComponent<FadeObjectInOut>().FadeOut(0.5f);		
+
+		    Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
     }
 
     private void OnTrackingLost()
@@ -112,17 +123,24 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 				foreach (Collider component in colliderComponents) {
 						component.enabled = false;
 				}
+				if (mTrackableBehaviour.TrackableName == "PortraitCharles") {
+					GameObject.Find("screenFader").GetComponent<flikkerScript>().enabled = false;
+					GameObject.Find("screenFader").GetComponent<GUITexture>().color = Color.clear;
+				}
 
 				Debug.Log ("Trackable " + mTrackableBehaviour.TrackableName + " lost");
 		}
 	private void fadeToBlackToFire(){
-		GameObject.Find ("screenFader").GetComponent<FadeScript> ().fade = true;
-		CameraDevice.Instance.SetFlashTorchMode(false);
-		Invoke ("restartFlashLight", 4.0f);
+		GameObject.Find ("screenFader").GetComponent<FadeScript>().fade = true;
 		}
-	private void restartFlashLight() {
-		CameraDevice.Instance.SetFlashTorchMode(true);
+
+	private void activateNoise(){
+		GameObject.Find ("Camera_left").GetComponent<NoiseEffect>().enabled = true;
+
+		GameObject.Find ("Camera_right").GetComponent<NoiseEffect>().enabled = true;
+		Invoke ("fadeToBlackToFire", 2.0f);
 	}
+	
 
     #endregion // PRIVATE_METHODS
 }
