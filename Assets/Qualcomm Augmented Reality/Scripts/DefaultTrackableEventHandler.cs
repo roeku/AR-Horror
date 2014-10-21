@@ -87,12 +87,15 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 
 		aktName = this.name;
 
-		if (mTrackableBehaviour.TrackableName == "mijn4") {
-						GameObject.Find ("screenFader").GetComponent<FadeScript> ().fade = true;
-				} else if (mTrackableBehaviour.TrackableName == "mijn5") {
-						GameObject.Find ("Cube").GetComponent<FadeObjectInOut> ().FadeOut (5.0f);	
-				} //else if (mTrackableBehaviour.TrackableName == "mijn8") {GameObject.Find("ARCamera").GetComponent<DataSetLoadBehaviour>()}
-        Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
+		if (mTrackableBehaviour.TrackableName == "mijn1") {
+			Invoke("fadeToBlackToFire", 2.0f);
+		} else if (mTrackableBehaviour.TrackableName == "mijn5") {
+			//Invoke("GameObject.Find ('Cube').GetComponent<FadeObjectInOut>().FadeOut (5.0f)", 2.0f);
+			CameraDevice.Instance.SetFlashTorchMode(true);
+		} //else if (mTrackableBehaviour.TrackableName == "mijn8") {GameObject.Find("ARCamera").GetComponent<DataSetLoadBehaviour>()}
+        	Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
+
+
     }
 
     private void OnTrackingLost()
@@ -112,6 +115,14 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 
 				Debug.Log ("Trackable " + mTrackableBehaviour.TrackableName + " lost");
 		}
+	private void fadeToBlackToFire(){
+		GameObject.Find ("screenFader").GetComponent<FadeScript> ().fade = true;
+		CameraDevice.Instance.SetFlashTorchMode(false);
+		Invoke ("restartFlashLight", 4.0f);
+		}
+	private void restartFlashLight() {
+		CameraDevice.Instance.SetFlashTorchMode(true);
+	}
 
     #endregion // PRIVATE_METHODS
 }

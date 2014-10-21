@@ -44,10 +44,10 @@ public class BackgroundTextureUIView : UIView {
         mAboutLabel = new UICheckButton(UIConstants.RectLabelAbout, false, aboutStyles);
         
         string[] cameraFlashStyles = {UIConstants.CameraFlashStyleOff, UIConstants.CameraFlashStyleOn};
-        mCameraFlashSettings = new UICheckButton(UIConstants.RectOptionTwo, false, cameraFlashStyles);
+        mCameraFlashSettings = new UICheckButton(UIConstants.RectOptionOne, false, cameraFlashStyles);
         
         string[] autofocusStyles = {UIConstants.AutoFocusStyleOff, UIConstants.AutoFocusStyleOn};
-        mAutoFocusSetting = new UICheckButton(UIConstants.RectOptionOne, false, autofocusStyles);
+        mAutoFocusSetting = new UICheckButton(UIConstants.RectOptionTwo, false, autofocusStyles);
         
         string[] closeButtonStyles = {UIConstants.closeButtonStyleOff, UIConstants.closeButtonStyleOn };
         mCloseButton = new UIButton(UIConstants.CloseButtonRect, closeButtonStyles);    
