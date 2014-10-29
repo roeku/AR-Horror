@@ -1,30 +1,14 @@
 Base path: C:/Program Files (x86)/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-4-12872
+Pipe name: \\.\pipe\UnityShaderCompiler-4-7064
 Cmd: getPlatforms
 Cmd: compileSnippet
-  api=5 type=0 insize=1471 outsize=756 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+  api=5 type=1 insize=848 outsize=6 kw= ok=1
 Cmd: compileSnippet
-  api=5 type=0 insize=1471 outsize=756 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_ON DIRLIGHTMAP_OFF ok=1
+  api=5 type=1 insize=1317 outsize=6 kw= ok=1
 Cmd: compileSnippet
-  api=5 type=0 insize=1471 outsize=756 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_ON DIRLIGHTMAP_ON ok=1
+  api=5 type=0 insize=710 outsize=1175 kw= ok=1
 Cmd: compileSnippet
-  api=5 type=0 insize=1471 outsize=756 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_OFF DIRLIGHTMAP_OFF VERTEXLIGHT_ON ok=1
-Cmd: compileSnippet
-  api=5 type=0 insize=1471 outsize=756 kw=DIRECTIONAL SHADOWS_SCREEN SHADOWS_NATIVE LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=1471 outsize=784 kw=DIRECTIONAL SHADOWS_SCREEN SHADOWS_NATIVE LIGHTMAP_ON DIRLIGHTMAP_ON ok=1
-Cmd: compileSnippet
-  api=9 type=1 insize=1471 outsize=7 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=9 type=1 insize=1471 outsize=7 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=5 type=1 insize=1471 outsize=6 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_ON DIRLIGHTMAP_ON ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=1642 outsize=1772 kw= ok=1
-Cmd: compileSnippet
-  api=9 type=1 insize=1642 outsize=7 kw= ok=1
-Cmd: compileSnippet
-  api=9 type=1 insize=1366 outsize=7 kw= ok=1
+  api=5 type=1 insize=1353 outsize=6 kw= ok=1
 Unhandled exception: Readfile from pipe failed. GLE=The pipe has been ended.
 
 

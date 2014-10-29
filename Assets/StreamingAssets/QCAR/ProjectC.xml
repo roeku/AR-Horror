@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="PortraitCharles" size="100.000000 141.451614" />
-    <ImageTarget name="FamilyPortrait" size="100.000000 70.695557" />
-    <ImageTarget name="Veiligheidswerker" size="100.000000 70.695557" />
-    <ImageTarget name="Wetenschapper" size="100.000000 70.695557" />
-    <ImageTarget name="Archeoloog" size="100.000000 70.695557" />
+    <ImageTarget name="jethro" size="100.000000 130.718948" />
+    <ImageTarget name="TagDeur" size="100.000000 113.805969" />
+    <ImageTarget name="archeoloogfoto" size="100.000000 66.666664" />
+    <ImageTarget name="wetenschapperfoto" size="100.000000 66.666664" />
+    <ImageTarget name="veiligheidswerkerfoto" size="100.000000 66.666664" />
     <ImageTarget name="Jorien" size="100.000000 66.650391" />
     <ImageTarget name="Wout" size="100.000000 150.000000" />
     <ImageTarget name="Jim" size="100.000000 150.000000" />
+    <ImageTarget name="PortraitCharles" size="100.000000 141.451614" />
+    <ImageTarget name="FamilyPortrait" size="100.000000 70.695557" />
   </Tracking>
 </QCARConfig>

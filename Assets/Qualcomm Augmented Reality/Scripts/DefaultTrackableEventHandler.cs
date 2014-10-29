@@ -16,7 +16,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 	public static bool TRACKING = false;
 	public static string aktName = "";
     private TrackableBehaviour mTrackableBehaviour;
-    
+	public GameObject ARFader;
     #endregion // PRIVATE_MEMBER_VARIABLES
 
 
@@ -89,20 +89,27 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 
 		if (mTrackableBehaviour.TrackableName == "FamilyPortrait") {
 						Invoke ("fadeToBlackToFire", 15.0f);
+						fadeInAlpha script = ARFader.GetComponent<fadeInAlpha> ();
+						script.enabled = true;
 						CameraDevice.Instance.SetFlashTorchMode (true);
-
-				} else if (mTrackableBehaviour.TrackableName == "target1") {
-						CameraDevice.Instance.SetFlashTorchMode (true);
-
+				} else if (mTrackableBehaviour.TrackableName == "veiligheidswerkerfoto") {
+						fadeInAlpha script = ARFader.GetComponent<fadeInAlpha> ();
+						script.enabled = true;
+				} else if (mTrackableBehaviour.TrackableName == "archeoloogfoto") {
+						Invoke ("activateDarknessFilter", 5.0f);
+				} else if (mTrackableBehaviour.TrackableName == "TagDeur") {
+						fadeToBlackToFire ();
 				} else if (mTrackableBehaviour.TrackableName == "Jim") {
 						Invoke ("activateNoise", 5.0f);
 				} else if (mTrackableBehaviour.TrackableName == "Jorien") {
 						Invoke ("activateNoise", 5.0f);		
 				} else if (mTrackableBehaviour.TrackableName == "Wout") {
-						Invoke ("activateNoise", 5.0f);		
+						Invoke ("activateNoise", 5.0f);
+				} else if (mTrackableBehaviour.TrackableName == "jethro") {
+						Invoke ("activateNoise", 5.0f);
 				} else if (mTrackableBehaviour.TrackableName == "PortraitCharles") {
-						GameObject.Find("screenFader").GetComponent<flikkerScript>().enabled = true;
-			Debug.Log("XDDDDD");
+						Invoke("fadeToBlackToFire", 5.0f);
+						GameObject.Find("screenFlikkerer").GetComponent<flikkerScript>().enabled = true;
 				}
 			//GameObject.Find('schim').GetComponent<FadeObjectInOut>().FadeOut(0.5f);		
 
@@ -124,9 +131,16 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 						component.enabled = false;
 				}
 				if (mTrackableBehaviour.TrackableName == "PortraitCharles") {
-					GameObject.Find("screenFader").GetComponent<flikkerScript>().enabled = false;
-					GameObject.Find("screenFader").GetComponent<GUITexture>().color = Color.clear;
-				}
+					GameObject.Find("screenFlikkerer").GetComponent<flikkerScript>().enabled = false;
+			GameObject.Find("screenFlikkerer").GetComponent<GUITexture>().color = Color.clear;
+			GameObject.Find("screenFader").GetComponent<GUITexture>().color = Color.clear;
+		} else if(mTrackableBehaviour.TrackableName == "FamilyPortrait") {
+			fadeInAlpha script = ARFader.GetComponent<fadeInAlpha>();
+			script.enabled = false;
+		} else if(mTrackableBehaviour.TrackableName == "veiligheidswerkerfoto") {
+			fadeInAlpha script = ARFader.GetComponent<fadeInAlpha>();
+			script.enabled = false;
+		} 
 
 				Debug.Log ("Trackable " + mTrackableBehaviour.TrackableName + " lost");
 		}
@@ -139,6 +153,12 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 
 		GameObject.Find ("Camera_right").GetComponent<NoiseEffect>().enabled = true;
 		Invoke ("fadeToBlackToFire", 2.0f);
+	}
+
+	private void activateDarknessFilter() {
+		GameObject.Find ("Camera_left").GetComponent<GrayscaleEffect>().enabled = true;
+		GameObject.Find ("Camera_right").GetComponent<GrayscaleEffect>().enabled = true;
+
 	}
 	
 

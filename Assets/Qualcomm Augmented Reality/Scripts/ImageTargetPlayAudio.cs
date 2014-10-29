@@ -29,7 +29,7 @@ ITrackableEventHandler
 		else
 		{
 			// Stop audio when target is lost
-			audio.Stop();
+			//audio.Stop();
 		}
 	}   
 }

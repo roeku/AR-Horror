@@ -35,7 +35,7 @@ public class AppManager : MonoBehaviour
 		private SplashScreenView mSplashView;
 		private SecondSplashScreenView mSecondSplashView;
 		private AboutScreenView mAboutView;
-		private float mSecondsVisible = 2.0f;
+		private float mSecondsVisible = 0.0f;
     #endregion PRIVATE_MEMBER_VARIABLES
 
 		private static AppManager instance;
@@ -57,8 +57,8 @@ public class AppManager : MonoBehaviour
 				InputController.BackButtonTapped += OnBackButtonTapped;
         
 				mSplashView.LoadView ();
-				StartCoroutine (LoadAboutPageForFirstTime ());
-				mActiveViewType = ViewType.SPLASHVIEW;
+				//StartCoroutine (LoadAboutPageForFirstTime ());
+				mActiveViewType = ViewType.ARCAMERAVIEW;
 				m_UIEventHandler.Bind ();
 		}
 		

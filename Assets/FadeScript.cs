@@ -28,7 +28,7 @@ public class FadeScript : MonoBehaviour {
 		else
 		{
 			guiTexture.color = Color.Lerp(guiTexture.color, Color.clear, fadeSpeed * Time.deltaTime);
-			//CameraDevice.Instance.SetFlashTorchMode(true);
+			CameraDevice.Instance.SetFlashTorchMode(true);
 		}
 
 		if(guiTexture.color.a >= 0.95f)fadeBlack = false;	
